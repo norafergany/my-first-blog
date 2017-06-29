@@ -78,10 +78,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'djangogirls',
-        'USER': 'nora',
-        'PASSWORD': '',
-        'HOST': 'localhost',
-        'POST': '',
+        'USER': 'super',
+        'PASSWORD': 'pups4ever',
+        'HOST': 'norafergany-458.postgres.pythonanywhere-services.com',
+        'PORT': '10458',
 
     }
 }
