@@ -25,7 +25,7 @@ SECRET_KEY = 's(i787@5_sa@2dn&t7$r@-kws)jy93vnf-w=yg-=^au+i(v@##'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'norafergany.pythonanywhere.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'www.norafergany.com', 'localhost']
 
 
 # Application definition
@@ -76,8 +76,13 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'djangogirls',
+        'USER': 'nora',
+        'PASSWORD': '',
+        'HOST': 'localhost',
+        'POST': '',
+
     }
 }
 
@@ -120,3 +125,5 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+LOGIN_DIRECT_URL = '/'
