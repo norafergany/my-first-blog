@@ -76,10 +76,6 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 DATABASES = {
     'default': {
-<<<<<<< HEAD
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-=======
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'djangogirls',
 <<<<<<< HEAD
@@ -88,7 +84,6 @@ DATABASES = {
         'HOST': 'norafergany-458.postgres.pythonanywhere-services.com',
         'PORT': '10458',
 =======
->>>>>>> 53d0b5051f484c7e6c617c3d455654fe7bc5fdd7
         'USER': 'nora',
         'PASSWORD': '',
         'HOST': 'localhost',
