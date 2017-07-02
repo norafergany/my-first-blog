@@ -18,10 +18,8 @@
             <h1>{{ post.title }}</h1>
             <p>{{ post.text|linebreaksbr }}</p>
         </div>
-{% endblock %}
 
 <a href="{% url 'post_detail' pk=post.pk %}">Comments: {{ post.comments.count }}</a>
-<hr>
 <a class="btn btn-default" href="{% url 'add_comment_to_post' pk=post.pk %}">Add comment</a>
 <hr>
 {% for comment in post.comments.all %}
@@ -37,6 +35,7 @@
         <strong>{{ comment.author }}</strong>
         <p>{{ comment.text|linebreaks }}</p>
     </div>
+    {% end if %}
 {% empty %}
     <p>No comments here yet :(</p>
 {% endfor %}
