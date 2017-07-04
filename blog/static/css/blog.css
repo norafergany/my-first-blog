@@ -1,6 +1,10 @@
 h1 a {
     color: #FCA205;
+<<<<<<< HEAD
     font-family: 'Lobster';
+=======
+    font-family: 'Roboto Condensed', sans-serif;
+>>>>>>> b80c38aa3ef5f6261a9557973cb5f5f33a9ab464
 }
 
 body {
@@ -24,7 +28,11 @@ body {
 }
 
 h1, h2, h3, h4 {
+<<<<<<< HEAD
     font-family: 'Lobster', cursive;
+=======
+    font-family: 'Roboto Condensed', sans-serif;
+>>>>>>> b80c38aa3ef5f6261a9557973cb5f5f33a9ab464
 }
 
 .date {
