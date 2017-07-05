@@ -1,31 +1,33 @@
 h1 a {
-    color: #FCA205;
-    font-family: 'Roboto Slab';
+    color: #0D1C82;
+    font-family: 'Roboto Slab', serif;
 }
 
 body {
-    padding-left: 15px;
+    padding-left: 15px
 }
 
 .page-header {
-    background-color: #ff9400;
+    background-color: #D4ECEC;
     margin-top: 0;
-    padding: 20px 20px 20px 40px;
+    padding: 60px 40px 0px 40px;
 }
 
 .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
     color: #ffffff;
     font-size: 36pt;
     text-decoration: none;
+    padding-bottom: 50px;
 }
 
 .content {
-    margin-left: 40px;
+    padding: 40px;
+    background-color: #ffffff;
 }
 
 h1, h2, h3, h4 {
 
-    font-family: 'Roboto Slab';
+    font-family: 'Roboto Slab', serif;
 }
 
 .date {
@@ -57,4 +59,31 @@ h1, h2, h3, h4 {
 
 .comment {
 margin: 20px 0px 20px 20px;
+}
+
+ul {
+list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: left;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}
+body {
+    font-family: 'Roboto Slab'; font-size: 16px;
 }
