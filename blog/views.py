@@ -102,3 +102,5 @@ def about_me(request):
 def portfolio_list(request):
     portfolio_posts = Post.objects.filter()
     return render(request, 'blog/portfolio_list.html')
+def contact_me(request):
+    return render(request, 'blog/contact_me.html')
