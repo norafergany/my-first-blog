@@ -1,11 +1,26 @@
 {% extends 'blog/base.html' %}
 {% block content %}
-    <div>
-
-        <h1><a href="">About</a></h1>
-        <img src="/static/aboutme.jpg" alt="Nora Fergany" style="width=:164px;height:164px" align="right" />
-        <p>I completed a BS in Economics from the University of Pittsburgh in April 2017. As a student, I have researched the legislative outcomes of indigenous women, the employment outcomes of online versus traditional degrees, and the effects of EEOC enforcement in the labor market. I also have experience in creative writing - I have a minor in Public and Professional Writing from the University of Pittsburgh and my writing has won awards. </p>
-        <p>I created this website using Python, HTML, Django, and CSS.</p>
-    </div>
+<table width="100%" border="0">
+  <tr>
+    <td colspan="2">
+      <h1>About Me</h1>
+    </td>
+  </tr>
+  <tr>
+    <td width="350">
+      <p align="justify" text-justify="inter-word">I completed a BS in Economics from the University of Pittsburgh in April 2017. As a student, I have researched the legislative outcomes of indigenous women, the employment outcomes of online versus traditional degrees, and the effects of EEOC enforcement in the labor market. I also have experience in creative writing - I have a minor in Public and Professional Writing from the University of Pittsburgh and my writing has won awards. </p>
+      <p>I created this website using Python, Django, HTML and CSS.</p>
+    </td>
+    <td width="50" valign="top" style="vertical-align:top;" >
+        <img src="/static/aboutme.jpg" alt="Nora Fergany" style="width=:192px;height:192px" align="right" />
+    </td>
+  </tr>
+  <tr>
+  </tr>
+</table>
 
 {% endblock %}
+
+
+
+
