@@ -91,7 +91,7 @@ def comment_remove(request, pk):
 
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
-    return render(request, 'blog/post_detail.html')
+    return render(request, 'blog/post_detail.html', {'post': post})
 
     Post.objects.get(pk=pk)
 
@@ -100,7 +100,7 @@ def about_me(request):
     return render(request, 'blog/about_me.html')
 
 def portfolio_list(request):
-    portfolio_posts = Post.objects.filter()
     return render(request, 'blog/portfolio_list.html')
+
 def contact_me(request):
     return render(request, 'blog/contact_me.html')
