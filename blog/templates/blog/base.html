@@ -16,7 +16,9 @@
 
         </head>
         <body>
+            <h1 height="200"><a href="/">Nora Fergany</a></h1>
 
+        <hr>
         <ul>
             <li><a class="active" href="/">Home</a></li>
             <li><a href="{% url 'about_me' %}">About</a></li>
@@ -24,7 +26,9 @@
             <li><a href="{% url 'portfolio_list' %}">Portfolio</a></li>
             <li><a href="https://www.linkedin.com/in/norafergany/">LinkedIn</a></li>
             <li><a href="{% url 'contact_me' %}">Contact</a></li>
+            <li><a href="{% url 'post_list' %}">Posts</a></li></li>
         </ul>
+        <hr>
         </body>
 
 
@@ -33,17 +37,30 @@
             <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
         {% endif %}
 
-            <h1 align="center" height="300" style='content: ""; display: block; margin: 0 auto; width: 35%; border-style:solid; border-width: 7px; border-color: black; padding: 25px 25px 25px 50px;'><a href="/">Nora Fergany</a></h1>
 
     </div>
+    {% block content %}
 
-        <div class="content container">
-            <div class="row">
-                <div class="col-md-8">
-                    {% block content %}
-                    {% endblock %}
-                </div>
-            </div>
-        </div>
-    </body>
+    <table width="75%" border="0" align="center">
+      <tr>
+        <td colspan="2">
+          <h1 align="center" style="margin-left:130px">About Me</h1>
+        </td>
+      </tr>
+      <tr>
+
+        <td width="50" valign="top" style="vertical-align:top; padding: 0 30px 0 30px;" >
+            <img src="/static/aboutme.jpg" alt="Nora Fergany" style="width:288px;height:288px" align="right" />
+        </td>
+         <td width="350">
+          <p align="justify" text-justify="inter-word">
+
+          </p>
+        </td>
+      </tr>
+      <tr>
+      </tr>
+    </table>
+    {% endblock %}
+
 </html>
