@@ -1,15 +1,32 @@
 {% extends 'blog/base.html' %}
+{% load static %}
 
-{% block content %}
+    {% block content %}
+
+                  <br/>
+              <br/>
+
+    <br/>
     {% for post in posts %}
-        <div class="post">
-            <div class="date">
+<div class="container">
+    <div class="left" style="float:left;height:200px;width:60%;">
+        <div class="post" style="border-bottom:solid gray;width:100%;padding-bottom:10px;">
+
+            <h3 style="font-size:30px;"><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h3>
+            <div class="date" style="color:gray;">
                 {{ post.published_date }}
             </div>
-            <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
             <p>{{ post.text|linebreaksbr }}</p>
-            <a href="{% url 'post_detail' pk=post.pk %}">Comments: {{ post.approved_comments.count }}</a>
-
+            <div style="width:100%;border-top:solid;border-width:1px;border-color:gray;padding-top:10px;">
+            <a href="{% url 'post_detail' pk=post.pk %}" style="font-size:12pt;color:blue;">Comments: {{ post.approved_comments.count }}</a>
+            </div>
         </div>
-    {% endfor %}
-{% endblock content %}
+         {% endfor %}
+    </div>
+    <div class="right" style="float:right;width:30%;">
+        <div style="width:100%; border-bottom:solid;border-width:2px;border-color:gray;">
+        <h3 style="text-align:center;">Categories</h3>
+        </div>
+    </div>
+</div>
+    {% endblock content %}
