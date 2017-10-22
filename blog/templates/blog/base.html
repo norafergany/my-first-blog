@@ -1,66 +1,84 @@
 {% load staticfiles %}
-<html>
-    <head>
-        <title>Nora Fergany</title>
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-        <link rel="stylesheet"
-              href="https://fonts.googleapis.com/css?family=Roboto+Slab">
-        <link href="https://fonts.googleapis.com/css?family=Quattrocento+Sans" rel="stylesheet">
-        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<html lang="en">
+<head>
+  <title>Nora Fergany</title>
+    <!-- my cooomnet -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/4d9122c9d6.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Codystar|Seaweed+Script" rel="stylesheet">
 
 
 
-        </head>
-        <body>
-            <h1 height="200"><a href="/">Nora Fergany</a></h1>
 
-        <hr>
-        <ul>
-            <li><a class="active" href="/">Home</a></li>
-            <li><a href="{% url 'about_me' %}">About</a></li>
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+   <script src="{% static 'js/blog.js' %}"></script>
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+      background-color:white;
+      color: black;
+font-family: 'Lato', sans-serif;
+    border-style: solid;
+    border-bottom: solid black;
+    border-top:black;
+    border-left:white;
+    border-right:white;
+    padding-bottom:0;
 
-            <li><a href="{% url 'portfolio_list' %}">Portfolio</a></li>
-            <li><a href="https://www.linkedin.com/in/norafergany/">LinkedIn</a></li>
-            <li><a href="{% url 'contact_me' %}">Contact</a></li>
-            <li><a href="{% url 'post_list' %}">Posts</a></li></li>
-        </ul>
-        <hr>
-        </body>
+    }
+
+    .title {
+
+        font-family: myHEADFont;
+    }
 
 
-    <div class="page-header">
-        {% if user.is_authenticated %}
-            <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
-        {% endif %}
+  </style>
+</head>
+<div >
+<div>
+    <h1 style="font-family: 'Codystar', cursive; font-size:40px;">Nora Fergany</h1>
+</div>
+
+<nav class="navbar navbar-inverse">
 
 
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="{% url 'post_list' %}">Home</a></li>
+        <li><a href="{% url 'about_me' %}">About</a></li>
+        <li><a href="{% url 'portfolio_list' %}">Portfolio</a></li>
+        <li><a href="{% url 'contact_me' %}">Contact</a></li>
+        <li><a href="https://www.linkedin.com/in/norafergany/">LinkedIn</a></li>
+        <li style="vertical-align:top;float:right;"><a href="#"><i class="fa fa-sign-in" style="color:gray;" aria-hidden="true"></i> Login</a></li>
+
+
+
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+      </ul>
     </div>
-    {% block content %}
+</nav>
+<br/>
+</div>
+<body class="content">
+{% block content %}
 
-    <table width="75%" border="0" align="center">
-      <tr>
-        <td colspan="2">
-          <h1 align="center" style="margin-left:130px">About Me</h1>
-        </td>
-      </tr>
-      <tr>
+{% endblock %}
 
-        <td width="50" valign="top" style="vertical-align:top; padding: 0 30px 0 30px;" >
-            <img src="/static/aboutme.jpg" alt="Nora Fergany" style="width:288px;height:288px" align="right" />
-        </td>
-         <td width="350">
-          <p align="justify" text-justify="inter-word">
 
-          </p>
-        </td>
-      </tr>
-      <tr>
-      </tr>
-    </table>
-    {% endblock %}
+
+
+    </body>
+
 
 </html>

@@ -1,8 +1,9 @@
 {% extends 'blog/base.html' %}
 {% block content %}
 <h1><a href="">Contact Me</a></h1>
+<div style="text-align:center;">
 <p>To contact me, email norafergany (at) pitt (dot) edu or use the form below:</p>
-<div id="contact_form" action="#" method="POST" enctype="multipart/form-data">
+<form id="contact_form" action="#" method="POST" enctype="multipart/form-data">
 	<div style="padding-left: 15px;">
     <div class="row">
 		<label for="name">Your name:</label><br />
@@ -19,7 +20,7 @@
     </br>
     <input id="submit_button" align="left;" type="submit" value="Send email" />
     </div>
-</div>
-</form>
 
+</form>
+</div>
 {% endblock %}

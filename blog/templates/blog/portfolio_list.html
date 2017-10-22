@@ -1,16 +1,23 @@
 {% extends 'blog/base.html' %}
+{% load static %}
 {% block content %}
-<br>
-    <h1><a href="">Portfolio</a></h1>
-    </br>
-    <h2>Data Visualizations</h2>
-    </br>
-    <div>
-        <embed type="image/svg+xml" src="/static/world_population_map.svg" />
-        <h3><a href =""> World Population Map</a></h3>
-        <h4><em> <font size="3"> <font color ="#90949C">Python, Pygal </em></h4>
-    </div>
-</div>
 
+<header>
+    <title>Portfolio</title>
+</header>
+<body>
+    <h1>Portfolio</h1>
+    <br/>
+    <h2>Data Visualizations</h2>
+<br/><br/>
+
+<div align="center">
+    <figure>
+<object type="image/svg+xml" data="/static/world_population_map.svg" style="width:85%;"></object>
+          <figcaption>Python, Pygal</figcaption>
+
+        </figure>
+</div>
+</body>
 {% endblock %}
 
