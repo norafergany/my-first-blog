@@ -9,14 +9,14 @@
     <br/>
     {% for post in posts %}
 <div class="container">
-    <div class="left" style="float:left;height:200px;width:60%;">
+    <div class="left" style="float:left;width:60%;">
         <div class="post" style="border-bottom:solid gray;width:100%;padding-bottom:10px;">
 
             <h3 style="font-size:30px;"><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h3>
             <div class="date" style="color:gray;">
                 {{ post.published_date }}
             </div>
-            <p>{{ post.text|linebreaksbr }}</p>
+            <p style="padding-bottom:20px;">{{ post.text|linebreaksbr }}</p>
             <div style="width:100%;border-top:solid;border-width:1px;border-color:gray;padding-top:10px;">
             <a href="{% url 'post_detail' pk=post.pk %}" style="font-size:12pt;color:blue;">Comments: {{ post.approved_comments.count }}</a>
             </div>
@@ -25,7 +25,14 @@
     </div>
     <div class="right" style="float:right;width:30%;">
         <div style="width:100%; border-bottom:solid;border-width:2px;border-color:gray;">
-        <h3 style="text-align:center;">Categories</h3>
+        <h3 style="padding-left:5px;border-bottom:solid gray;padding-bottom:10px;border-width:2px;">Categories</h3>
+            <div>
+                <ul class="cat">
+                    {% for category in categories %}
+                    <li class="cat"><i class="fa fa-circle" aria-hidden="true" style="font-size: 0.5em;vertical-align:2px;"></i><a href="{% url 'category_detail' pk=category.pk %}">         {{ category.title }}</a></li> <br/>
+                    {% endfor %}
+                </ul>
+            </div>
         </div>
     </div>
 </div>

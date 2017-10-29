@@ -18,6 +18,34 @@ margin: 20px 0px 20px 20px;
     padding:10px 250px;
 
 }
+ul.cat,li.cat {
+    margin: 5px;
+    padding: 0;
+}
+
+ul.cat {
+    display: table;
+    list-style-type: circle;
+}
+
+li.cat {
+    list-style: none;
+    display: table-row;
+}
+
+li.cat:hover{
+    text-decoration: underline;
+}
+.fa{
+padding-right: 0.5em;
+}
+
+
+li.cat::before {
+    display: table-cell;
+    text-align: right;
+    padding-right: 0;
+}
 
 .posts{
     float:left;
@@ -61,7 +89,7 @@ title, h1, h2 {
 
 
 
-ul {
+ul.nav {
 
     overflow: hidden;
     background-color: #ffffff;
@@ -69,13 +97,13 @@ ul {
 
 
 
-li {
+li.nav {
     float: left;
     overflow:hidden;
 
 }
 
-li a {
+li.nav a {
     display: block;
     color: black;
     text-decoration: none;
@@ -84,7 +112,7 @@ li a {
 
 }
 
-li a:hover {
+li.nav a:hover {
     background-color: #BEBCBC;
 
 

@@ -1,0 +1,16 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+
+<h1 style="padding-bottom:30px;">Posts for: {{category.title}}</h1>
+{% if category.post_set.all %}
+{% for i in category.post_set.all %}
+<h2 style="text-align:left;">{{i.title}}</h2>
+<p style="color:gray;">{{i.published_date}}</p>
+<p style="text-align:left;padding-bottom:20px;border-bottom:solid gray;border-width:2px;">{{ i.text }}</p>
+{% endfor %}
+{% else %}
+<p>Sorry, there are no posts in this category yet! Check back soon.</p>
+{% endif %}
+
+<br />
+{% endblock %}
