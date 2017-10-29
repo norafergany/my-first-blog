@@ -1,7 +1,9 @@
-from django.conf.urls import url
+from django.conf.urls import url, include
 from . import views
+from django.contrib import admin
 
 urlpatterns = [
+    url(r'^admin/', include(admin.site.urls)),
     url(r'^$', views.post_list, name='post_list'),
     url(r'^post/(?P<pk>\d+)/$', views.post_detail, name='post_detail'),
     url(r'^post/new/$', views.post_new, name='post_new'),
@@ -15,4 +17,7 @@ urlpatterns = [
     url(r'^about_me/$', views.about_me, name='about_me'),
     url(r'^portfolio/$', views.portfolio_list, name="portfolio_list"),
     url(r'^contact_me/$', views.contact_me, name="contact_me"),
+    url(r'^category/(?P<pk>\d+)/$', views.category_detail, name='category_detail'),
+    url(r'^category$', views.category_list, name='category_list'),
+
 ]
