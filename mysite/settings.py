@@ -118,3 +118,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 
 LOGIN_REDIRECT_URL = '/'
+
+PYGMENTIFY = {
+    'style': 'emacs',
+    'cssclass': 'highlight',
+    'minify': True,
+}
