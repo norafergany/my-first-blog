@@ -1,29 +1,34 @@
 {% extends 'blog/base.html' %}
+{% load static %}
+{% load pygmentify_tags %}
 
 {% block content %}
+<div class="left">
     <div class="post">
 
         {% if post.published_date %}
             <div class="date">
                 {{ post.published_date }}
             </div>
+        {%  else %}
+                        <a class="btn btn-default" href="{% url 'post_publish' pk=post.pk %}">Publish</a>
+
         {% endif %}
         {% if user.is_authenticated %}
 
-            <a class="btn btn-default" href="{% url 'post_publish' pk=post.pk %}">Publish</a>
             <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
             <a class="btn btn-default" href="{% url 'post_remove' pk=post.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
 
         {% endif %}
 
-        <h1>{{ post.title }}</h1>
-        <p>{{ post.text|linebreaksbr }}</p>
-    </div>
+        <h1 class="dettitle">{{ post.title }}</h1>
+        <p class="pyg">{% pygmentify style='emacs' linenos='true' %}{{ post.text|linebreaksbr }}{% endpygmentify %}</p>
 
-<a href="{% url 'post_detail' pk=post.pk %}">Comments: {{ post.comments.count }}</a>
-<a class="btn btn-default" href="{% url 'add_comment_to_post' pk=post.pk %}">Add comment</a>
-<hr>
-{% for comment in post.comments.all %}
+
+
+<a class="btn btn-default addcomm" href="{% url 'add_comment_to_post' pk=post.pk %}">Add comment</a>
+
+        {% for comment in post.comments.all %}
     {% if user.is_authenticated or comment.approved_comment %}
     <div class="comment">
         <div class="date">
@@ -38,7 +43,20 @@
     </div>
     {% endif %}
 {% empty %}
-    <p>No comments here yet :(</p>
+    <p class="nocom">No comments here yet :(</p>
 {% endfor %}
-
+  </div>
+</div>
+    <div class="detright">
+        <div class="rsub">
+        <h3 class="hcat">Categories</h3>
+            <div>
+                <ul class="cat">
+                    {% for category in categories %}
+                    <li class="cat"><i class="fa fa-circle" aria-hidden="true" style="font-size: 0.5em;vertical-align:2px;"></i><a href="{% url 'category_detail' pk=category.pk %}"> {{ category.title }}</a></li> <br/>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
 {% endblock %}
