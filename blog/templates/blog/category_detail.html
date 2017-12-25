@@ -1,4 +1,5 @@
 {% extends 'blog/base.html' %}
+{% load pygmentify_tags %}
 {% block content %}
 
 <h1 style="padding-bottom:30px;">Posts for: {{category.title}}</h1>
@@ -6,7 +7,7 @@
 {% for i in category.post_set.all %}
 <h2 style="text-align:left;">{{i.title}}</h2>
 <p style="color:gray;">{{i.published_date}}</p>
-<p style="text-align:left;padding-bottom:20px;border-bottom:solid gray;border-width:2px;">{{ i.text }}</p>
+<p style="text-align:left;padding-bottom:20px;border-bottom:solid gray;border-width:2px;">{% pygmentify style='emacs' linenos='true' %} {{ i.text|linebreaksbr }}{% endpygmentify %}</p>
 {% endfor %}
 {% else %}
 <p>Sorry, there are no posts in this category yet! Check back soon.</p>
