@@ -88,7 +88,7 @@ def comment_remove(request, pk):
 
 
 def post_list(request):
-    posts = Post.objects.filter(published_date__isnull=False).order_by('published_date')
+    posts = Post.objects.filter(published_date__isnull=False).order_by('-published_date')
     categories = Category.objects.all()
     return render(request, 'blog/post_list.html', {'posts': posts, 'categories': categories})
 
