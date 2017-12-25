@@ -1,39 +1,48 @@
 {% extends 'blog/base.html' %}
 {% load static %}
+{% load pygmentify_tags %}
+
 
     {% block content %}
 
-                  <br/>
-              <br/>
 
-    <br/>
-    {% for post in posts %}
-<div class="container">
-    <div class="left" style="float:left;width:60%;">
-        <div class="post" style="border-bottom:solid gray;width:100%;padding-bottom:10px;">
+{% for post in posts %}
 
-            <h3 style="font-size:30px;"><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h3>
-            <div class="date" style="color:gray;">
-                {{ post.published_date }}
-            </div>
-            <p style="padding-bottom:20px;">{{ post.text|linebreaksbr }}</p>
-            <div style="width:100%;border-top:solid;border-width:1px;border-color:gray;padding-top:10px;">
-            <a href="{% url 'post_detail' pk=post.pk %}" style="font-size:12pt;color:blue;">Comments: {{ post.approved_comments.count }}</a>
-            </div>
-        </div>
-         {% endfor %}
+    <div class="left" >
+            <div class="post">
+                <div class="date">
+                    {{ post.published_date }}
+                </div>
+                <h3 class="detailtitle"><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h3>
+
+                <p class="pyg">{% pygmentify style='emacs'  num=1 %}{{ post.text|linebreaksbr }}{% endpygmentify %}</p>
+                <div class="divcom">
+                <a class="postcom" href="{% url 'post_detail' pk=post.pk %}">Comments: {{ post.approved_comments.count }}</a>
+                </div>
+
+
+     </div>
     </div>
-    <div class="right" style="float:right;width:30%;">
-        <div style="width:100%; border-bottom:solid;border-width:2px;border-color:gray;">
-        <h3 style="padding-left:5px;border-bottom:solid gray;padding-bottom:10px;border-width:2px;">Categories</h3>
+{% endfor %}
+
+
+        <div class="right">
+        <div class="rsub">
+        <h3 class="hcat">Categories</h3>
             <div>
                 <ul class="cat">
                     {% for category in categories %}
-                    <li class="cat"><i class="fa fa-circle" aria-hidden="true" style="font-size: 0.5em;vertical-align:2px;"></i><a href="{% url 'category_detail' pk=category.pk %}">         {{ category.title }}</a></li> <br/>
+                    <li class="cat"><i class="fa fa-circle facat" aria-hidden="true"></i><a href="{% url 'category_detail' pk=category.pk %}"> {{ category.title }}</a></li> <br/>
                     {% endfor %}
                 </ul>
             </div>
         </div>
     </div>
-</div>
+
+
+
+
+
+
+
     {% endblock content %}

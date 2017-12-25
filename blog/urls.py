@@ -18,6 +18,5 @@ urlpatterns = [
     url(r'^portfolio/$', views.portfolio_list, name="portfolio_list"),
     url(r'^contact_me/$', views.contact_me, name="contact_me"),
     url(r'^category/(?P<pk>\d+)/$', views.category_detail, name='category_detail'),
-    url(r'^category$', views.category_list, name='category_list'),
 
 ]

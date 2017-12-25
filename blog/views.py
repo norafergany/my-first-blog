@@ -6,10 +6,7 @@ from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
-def post_list(request):
-    posts = Post.objects.filter(published_date__isnull=False).order_by('published_date')
-    categories = Category.objects.all()
-    return render(request, 'blog/post_list.html', {'posts': posts, 'categories': categories})
+
 
 
 @login_required
@@ -90,10 +87,16 @@ def comment_remove(request, pk):
     return redirect('post_detail', pk=comment.post.pk)
 
 
+def post_list(request):
+    posts = Post.objects.filter(published_date__isnull=False).order_by('published_date')
+    categories = Category.objects.all()
+    return render(request, 'blog/post_list.html', {'posts': posts, 'categories': categories})
+
+
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
-    return render(request, 'blog/post_detail.html', {'post': post})
-
+    categories = Category.objects.all()
+    return render(request, 'blog/post_detail.html', {'post': post, 'categories': categories})
 
 
 def about_me(request):
@@ -106,11 +109,6 @@ def portfolio_list(request):
 
 def contact_me(request):
     return render(request, 'blog/contact_me.html')
-
-
-def category_list(request):
-    categories = Category.objects.all()
-    return render(request, 'blog/category.html', {'categories': categories})
 
 
 def category_detail(request, pk):

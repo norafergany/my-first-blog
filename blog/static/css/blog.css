@@ -1,23 +1,75 @@
+
+
+/* POSTS */
+
 .post {
     margin-bottom: 70px;
     float:left;
+    margin-top:40px;
 }
 
 .post h1 a, .post h1 a:visited {
     color: #000000;
 }
 
-.comment {
-margin: 20px 0px 20px 20px;
+
+.posts{
+    float:left;
 }
+
+/* LAYOUT */
 
 .content {
     background-color: #ffffff;
     font-family: 'Lato', sans-serif;
-    width:initial;
-    padding:10px 250px;
+    margin:10px 250px;
 
 }
+
+div.left{
+    float:left;
+    width:60%;
+}
+
+div.right{
+    float:right;
+    width:30%;
+    position:relative;
+    bottom:250px;
+}
+
+div.detright{
+    float:right;
+    width:30%;
+    position:relative;
+    top:10px;
+}
+
+div.date{
+    color:gray;
+}
+
+div.rsub{
+    border-bottom:solid;
+    border-width:2px;
+    border-color:gray;
+}
+
+div.post {
+    width:100%;
+    border-bottom:solid gray;
+    padding-bottom: 10px;
+    margin-bottom:20px;
+}
+
+
+div.divcom {
+    border: 1px gray;
+    border-top-style: solid;
+    padding-top:10px;
+}
+
+/* CATEGORIES */
 ul.cat,li.cat {
     margin: 5px;
     padding: 0;
@@ -33,23 +85,51 @@ li.cat {
     display: table-row;
 }
 
+i.facat {
+    font-size:0.5em;
+    vertical-align: 2px;
+
+}
+
 li.cat:hover{
     text-decoration: underline;
 }
-.fa{
-padding-right: 0.5em;
-}
-
 
 li.cat::before {
     display: table-cell;
     text-align: right;
     padding-right: 0;
 }
-
-.posts{
-    float:left;
+.fa{
+padding-right: 0.5em;
 }
+
+/* COMMENTS */
+.comment {
+margin: 20px 0px 20px 20px;
+}
+
+a.comment link {
+    color: black;
+
+}
+a.comment:visited {
+    color: blue;
+}
+
+a.comment:hover {
+    text-decoration: underline;
+}
+
+a.comment:active {
+    color:blue;
+}
+
+a.postcom{
+    font-size:12pt;
+    color:blue;
+}
+
 
 @font-face {
     font-family: myFirstFont;
@@ -61,11 +141,64 @@ li.cat::before {
     src: url(Audrey-Normal.otf);
 }
 
+/* HEADINGS */
+
 title, h1, h2 {
 
     text-align:center;
 }
 
+
+h1.webtitle:hover{
+    text-decoration: none;
+}
+
+a.webtitle:hover{
+    text-decoration: none;
+}
+h3 {
+    font-size:30px;
+}
+
+h3, a {
+
+    color:black;
+    text-decoration: none;
+}
+
+h1.dettitle{
+    text-align:left;
+}
+h3.detailtitle{
+    margin-bottom:0;
+    padding-bottom:0;
+    padding-top:0;
+    margin-top:20px;
+}
+h3.hcat{
+    padding-left:5px;
+    border-bottom:solid gray;
+    padding-bottom:10px;
+    border-width:2px;
+}
+
+p.pyg {
+    padding-bottom:10px;
+    margin-top:10px;
+}
+
+a.addcom {
+    margin-bottom:30px;
+}
+
+p.nocom{
+    padding-top:7px;
+    padding-bottom:1px;
+    border-top:solid gray;
+    border-width:thin;
+    margin-top:20px;
+    margin-bottom:2px;
+}
 .item {
     height: 100vh;
     min-height: 300px;
@@ -75,6 +208,9 @@ title, h1, h2 {
     -o-background-size: cover;
     background-size: cover;
 }
+
+
+/* NAVIGATION */
 
 .header {
 
@@ -89,7 +225,7 @@ title, h1, h2 {
 
 
 
-ul.nav {
+/*ul.nav {
 
     overflow: hidden;
     background-color: #ffffff;
@@ -99,27 +235,43 @@ ul.nav {
 
 li.nav {
     float: left;
-    overflow:hidden;
 
 }
 
 li.nav a {
-    display: block;
-    color: black;
-    text-decoration: none;
-        overflow:hidden;
-    padding: 14px 16px;
+display: block;
+    padding: 8px;
 
 }
-
+/*
 li.nav a:hover {
     background-color: #BEBCBC;
 
 
 }
 
-h3, a {
+*/
 
-    color:black;
+ul.mynav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid black;
+}
+li.nav {
+    float: left;
+}
+
+li.nav a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
     text-decoration: none;
 }
+
+li.nav a:hover {
+    background-color: #A1C0ED;
+}
+
