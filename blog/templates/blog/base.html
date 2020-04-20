@@ -1,109 +1,117 @@
 {% load static %}
 {% load pygmentify_tags %}
-
+<!doctype html>
 <html lang="en">
 <head>
-  <title>Nora Fergany</title>
-    <!-- my cooomnet -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Nora Fergany: Software Developer in Pittsburgh, PA</title>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    {#        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">#}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <link rel="icon"
+          href="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/237/female-technologist-type-1-2_1f469-1f3fb-200d-1f4bb.png">
+    {#    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>#}
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <!--
     <script src="https://use.fontawesome.com/1dad0d8df2.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Codystar|Seaweed+Script" rel="stylesheet">
-<link rel="stylesheet" href="{% pygmentify_css 'monokai' %}">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    -->
+    <link rel="stylesheet" href="{% pygmentify_css 'monokai' %}">
 
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- jQuery library -->
+    {#    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>#}
 
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    {#    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>#}
 
 
     <link rel="stylesheet" href="{% static 'css/blog.css' %}">
-   <script src="{% static 'js/blog.js' %}"></script>
-  <style>
-    /* Remove the navbar's default margin-bottom and rounded borders */
-    /*.navbar {
-      margin-bottom: 0;
-      border-radius: 0;
-      background-color:white;
-      color: black;
-font-family: 'Lato', sans-serif;
-    border-style: solid;
-    border-bottom: solid black;
-    border-top:black;
-    border-left:white;
-    border-right:white;
-    padding-bottom:0;
+    <script src="{% static 'js/blog.js' %}"></script>
+    <style>
+        /* Remove the navbar's default margin-bottom and rounded borders */
+        /*.navbar {
+          margin-bottom: 0;
+          border-radius: 0;
+          background-color:white;
+          color: black;
+    font-family: 'Lato', sans-serif;
+        border-style: solid;
+        border-bottom: solid black;
+        border-top:black;
+        border-left:white;
+        border-right:white;
+        padding-bottom:0;
 
-    }
-*/
-    .title {
+        }
+    */
+        .title {
 
-        font-family: myHEADFont;
-    }
+            font-family: myHEADFont;
+        }
 
 
-  </style>
+    </style>
 </head>
 
 
-<div >
+<div class="container">
+    <nav class="navbar navbar-expand-lg">
+{# ul class: mynav nav#}
+        <ul class="navbar-nav nav-list-border">
 
-<div>
-    <a class="webtitle" href="{% url 'post_list' %}"><h1 class="webtitle" style="font-family: 'Codystar', cursive; font-size:40px;">Nora Fergany</h1></a>
-</div>
-<!--
-<nav class="navbar navbar-inverse">
+            <li class="nav-item active nav nora "><a href="{% url 'home' %}">NORA FERGANY</a></li>
+                    </ul>
 
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
 
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li class="active nav"><a href="{% url 'post_list' %}">Home</a></li>
-        <li class="nav"><a href="{% url 'about_me' %}">About</a></li>
-        <li class="nav"><a href="{% url 'portfolio_list' %}">Portfolio</a></li>
-        <li class="nav"><a href="{% url 'contact_me' %}">Contact</a></li>
-        <li class="nav"><a href="https://www.linkedin.com/in/norafergany/">LinkedIn</a></li>
+            <ul class="navbar-nav nav-list-border">
+            <li class="nav-item nav nav-item-border"><a href="https://www.linkedin.com/in/norafergany/">LinkedIn</a></li>
+            <li class="nav-item nav nav-item-border"><a href="{% url 'contact_me' %}">Contact</a></li>
+            <li class="nav-item nav nav-item-border"><a href="{% url 'portfolio_list' %}">Portfolio</a></li>
+            <li class="nav-item nav nav-item-border"><a href="{% url 'post_list' %}">Blog Posts</a></li>
+            </ul>
+            </div>
+                  <!--
+
         <li class="nav" style="vertical-align:top;float:right;"><a href="/admin/"><i class="fa fa-sign-in" style="color:gray;" aria-hidden="true"></i> Login</a></li>
 
+    -->
 
+    </nav>
 
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-      </ul>
-    </div>
-</nav>
--->
-    <ul class="mynav">
-    <li class="active nav"><a href="{% url 'post_list' %}">Home</a></li>
-    <li class="nav"><a href="{% url 'about_me' %}">About</a></li>
-    <li class="nav"><a href="{% url 'portfolio_list' %}">Portfolio</a></li>
-    <li class="nav"><a href="{% url 'contact_me' %}">Contact</a></li>       <li class="nav"><a href="https://www.linkedin.com/in/norafergany/">LinkedIn</a></li>
-    <li class="nav" style="vertical-align:top;float:right;"><a href="/admin/"><i class="fa fa-sign-in" style="color:gray;" aria-hidden="true"></i> Login</a></li>
-
-
-
-      </ul>
-
-    </div>
+</div>
 <br/>
-
 
 
 <body class="content">
 {% block content %}
-{% pygmentify %}
-{% endpygmentify %}
+    {% pygmentify %}
+    {% endpygmentify %}
 
 
 
 
-<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    {#    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"#}
+    {#            integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"#}
+    {#            crossorigin="anonymous"></script>#}
+    {#    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"#}
+    {#            integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"#}
+    {#            crossorigin="anonymous"></script>#}
+    {#    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"#}
+    {#            integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"#}
+    {#            crossorigin="anonymous"></script>#}
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
     </body>
 {% endblock %}
 

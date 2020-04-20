@@ -1,6 +1,6 @@
 from django.utils import timezone
 from .models import Post, Comment, Category
-from django.shortcuts import render, get_object_or_404, redirect, render_to_response
+from django.shortcuts import render, get_object_or_404, redirect
 from .forms import PostForm, CommentForm
 from django.contrib.auth.decorators import login_required
 
@@ -91,6 +91,9 @@ def post_list(request):
     posts = Post.objects.filter(published_date__isnull=False).order_by('-published_date')
     categories = Category.objects.all()
     return render(request, 'blog/post_list.html', {'posts': posts, 'categories': categories})
+
+def home(request):
+    return render(request, 'blog/index.html')
 
 
 def post_detail(request, pk):
