@@ -16,10 +16,20 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from django.contrib.auth import views
+from django.contrib import admin
+from django.urls import include, path, re_path
+import blog
+
+# urlpatterns = [
+#     url(r'^admin/', admin.site.urls),
+#     url(r'^accounts/login/$', views.login, name='login'),
+#     url(r'^accounts/logout/$', views.logout, name='logout', kwargs={'next_page': '/'}),
+#     url(r'', blog.urls),
+# ]
 
 urlpatterns = [
-    url(r'^admin/', include(admin.site.urls)),
-    url(r'^accounts/login/$', views.login, name='login'),
-    url(r'^accounts/logout/$', views.logout, name='logout', kwargs={'next_page': '/'}),
-    url(r'', include('blog.urls')),
+    path('', include('blog.urls')),
+    path('admin/', admin.site.urls),
+    re_path('^accounts/login/$', views.LoginView, name='login'),
+    re_path('^accounts/logout/$', views.LogoutView, name='logout', kwargs={'next_page': '/'}),
 ]

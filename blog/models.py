@@ -19,13 +19,13 @@ class Category(models.Model):
 
 
 class Post(models.Model):
-    author = models.ForeignKey('auth.User')
+    author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
     text = models.TextField()
     created_date = models.DateTimeField(
         default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
-    category = models.ForeignKey(Category, verbose_name="Category", default='Category', null=True, blank=True)
+    category = models.ForeignKey(Category, verbose_name="Category", default='Category', null=True, blank=True, on_delete=models.CASCADE)
 
     def publish(self):
         self.published_date = timezone.now()
@@ -44,7 +44,7 @@ class Post(models.Model):
 
 
 class Comment(models.Model):
-    post = models.ForeignKey('blog.Post', related_name='comments')
+    post = models.ForeignKey('blog.Post', related_name='comments', on_delete=models.CASCADE)
     # get access to comments in Post model
     author = models.CharField(max_length=200)
     text = models.TextField()
