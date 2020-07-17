@@ -1,4 +1,4 @@
-$(document).ready(function(){
-    // Activate Carousel
-
-});
+// $(document).ready(function(){
+//     // Activate Carousel
+//
+// });
