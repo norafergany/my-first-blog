@@ -5,114 +5,62 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Nora Fergany: Software Developer in Pittsburgh, PA</title>
-
-    {#        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">#}
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
+    {% block title %} <title>Nora Fergany: Software Developer in Pittsburgh, PA</title> {% endblock %}
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+ <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <link rel="icon"
           href="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/237/female-technologist-type-1-2_1f469-1f3fb-200d-1f4bb.png">
-    {#    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>#}
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-    <!--
-    <script src="https://use.fontawesome.com/1dad0d8df2.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Codystar|Seaweed+Script" rel="stylesheet">
-    -->
+
     <link rel="stylesheet" href="{% pygmentify_css 'monokai' %}">
-
-    <!-- jQuery library -->
-    {#    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>#}
-
-    <!-- Latest compiled JavaScript -->
-    {#    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>#}
-
-
     <link rel="stylesheet" href="{% static 'css/blog.css' %}">
     <script src="{% static 'js/blog.js' %}"></script>
-    <style>
-        /* Remove the navbar's default margin-bottom and rounded borders */
-        /*.navbar {
-          margin-bottom: 0;
-          border-radius: 0;
-          background-color:white;
-          color: black;
-    font-family: 'Lato', sans-serif;
-        border-style: solid;
-        border-bottom: solid black;
-        border-top:black;
-        border-left:white;
-        border-right:white;
-        padding-bottom:0;
-
-        }
-    */
-        .title {
-
-            font-family: myHEADFont;
-        }
-
-
-    </style>
 </head>
 
+<!--NAV -->
 
-<div class="container">
-    <nav class="navbar navbar-expand-lg">
-{# ul class: mynav nav#}
-        <ul class="navbar-nav nav-list-border">
+<div class="">
 
-            <li class="nav-item active nav nora "><a href="{% url 'home' %}">NORA FERGANY</a></li>
-                    </ul>
+    <nav class="navbar navbar-light navbar-expand-lg">
 
-            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+  <a class="navbar-brand" href="{% url 'home' %}">NORA FERGANY</a>
 
-            <ul class="navbar-nav nav-list-border">
-            <li class="nav-item nav nav-item-border"><a href="https://www.linkedin.com/in/norafergany/">LinkedIn</a></li>
-            <li class="nav-item nav nav-item-border"><a href="{% url 'contact_me' %}">Contact</a></li>
-            <li class="nav-item nav nav-item-border"><a href="{% url 'portfolio_list' %}">Portfolio</a></li>
-            <li class="nav-item nav nav-item-border"><a href="{% url 'post_list' %}">Blog Posts</a></li>
+        <ul class="nav navbar-nav nav-list-border">
+            <li class="nav-item active nav nora "><a class="navbar-brand" href="{% url 'home' %}">NORA FERGANY</a></li>
+        </ul>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navTest"
+                aria-controls="navTest" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navTest">
+            <ul class="nav mr-auto navbar-nav nav-list-border ">
+                <li class="nav nav-item-border"><a class="nav-link" href="https://www.linkedin.com/in/norafergany/"
+                                                            target="_blank">LinkedIn</a></li>
+                <li class="nav nav-item-border"><a class="nav-link" href="{% url 'portfolio_list' %}">Portfolio</a></li>
+                <li class="nav nav-item-border"><a class="nav-link" href="{% url 'post_list' %}">Blog</a></li>
             </ul>
-            </div>
-                  <!--
-
-        <li class="nav" style="vertical-align:top;float:right;"><a href="/admin/"><i class="fa fa-sign-in" style="color:gray;" aria-hidden="true"></i> Login</a></li>
-
-    -->
-
+        </div>
     </nav>
-
 </div>
 <br/>
 
+<!--Body-->
 
-<body class="content">
-{% block content %}
-    {% pygmentify %}
-    {% endpygmentify %}
+<body>
+<div class="container">
+    {% block content %}
+        {% pygmentify %}
+        {% endpygmentify %}
 
 
 
+        </div>
 
-    {#    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"#}
-    {#            integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"#}
-    {#            crossorigin="anonymous"></script>#}
-    {#    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"#}
-    {#            integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"#}
-    {#            crossorigin="anonymous"></script>#}
-    {#    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"#}
-    {#            integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"#}
-    {#            crossorigin="anonymous"></script>#}
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-            crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-            crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-            crossorigin="anonymous"></script>
-    </body>
-{% endblock %}
+    {% endblock %}
+
+        </body>
 
 </html>
