@@ -32,6 +32,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     re_path('^accounts/login/$', views.LoginView, name='login'),
     re_path('^accounts/logout/$', views.LogoutView, name='logout', kwargs={'next_page': '/'}),
-    path('tinymce/', include('tinymce.urls')),
 
 ]
