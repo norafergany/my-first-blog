@@ -92,7 +92,7 @@ def post_list(request):
     return render(request, 'blog/post_list.html', {'posts': posts, 'categories': categories})
 
 
-def home(request):
+def index(request):
     return render(request, 'blog/index.html')
 
 
