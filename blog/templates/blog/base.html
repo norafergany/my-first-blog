@@ -6,26 +6,30 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     {% block title %} <title>Nora Fergany: Software Developer in Pittsburgh, PA</title> {% endblock %}
+    <link rel="stylesheet" href="{% pygmentify_css %}">
+
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
     <link rel="icon"
           href="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/237/female-technologist-type-1-2_1f469-1f3fb-200d-1f4bb.png">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 
-    <link rel="stylesheet" href="{% pygmentify_css 'monokai' %}">
     <link rel="stylesheet" href="{% static 'css/blog.css' %}">
-    <script src="{% static 'js/blog.js' %}"></script>
+
 </head>
 
 <!--NAV -->
 
-<div class="">
+
+
+<!--Body-->
+
+<body>
+<div class="nora-nav mb-5">
 
     <nav class="navbar navbar-light navbar-expand-lg">
 
-  <a class="navbar-brand" href="{% url 'home' %}">NORA FERGANY</a>
+{#  <a class="navbar-brand" href="{% url 'home' %}">NORA FERGANY</a>#}
 
         <ul class="nav navbar-nav nav-list-border">
             <li class="nav-item active nav nora "><a class="navbar-brand" href="{% url 'home' %}">NORA FERGANY</a></li>
@@ -36,7 +40,8 @@
         </button>
 
         <div class="collapse navbar-collapse justify-content-end" id="navTest">
-            <ul class="nav mr-auto navbar-nav nav-list-border ">
+            <ul class="nav navbar-nav nav-list-border ">
+
                 <li class="nav nav-item-border"><a class="nav-link" href="https://www.linkedin.com/in/norafergany/"
                                                             target="_blank">LinkedIn</a></li>
                 <li class="nav nav-item-border"><a class="nav-link" href="{% url 'portfolio_list' %}">Portfolio</a></li>
@@ -46,21 +51,20 @@
     </nav>
 </div>
 <br/>
+<div class="container text-center">
 
-<!--Body-->
-
-<body>
-<div class="container">
     {% block content %}
-        {% pygmentify %}
-        {% endpygmentify %}
+{% pygmentify %}
+{% endpygmentify %}
 
-
-
-        </div>
 
     {% endblock %}
 
+        </div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         </body>
 
 </html>

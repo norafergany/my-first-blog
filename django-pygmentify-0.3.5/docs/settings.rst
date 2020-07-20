@@ -8,7 +8,7 @@ The template tag offers one setting that nests options as a dictionary. By defau
 .. code-block:: python
 
    PYGMENTIFY = {
-       'style': 'default',
+       'style': 'algol',
        'cssclass': 'highlight',
        'minify': True,
    }

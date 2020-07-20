@@ -1,6 +1,6 @@
 from django.db import models
 from django.utils import timezone
-
+from tinymce.models import HTMLField
 
 # Create your models here.
 
@@ -26,6 +26,7 @@ class Post(models.Model):
         default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
     category = models.ForeignKey(Category, verbose_name="Category", default='Category', null=True, blank=True, on_delete=models.CASCADE)
+    # content = HTMLField()
 
     def publish(self):
         self.published_date = timezone.now()
@@ -36,6 +37,10 @@ class Post(models.Model):
 
     def __unicode__(self):
         return self.title
+
+    class Meta:
+        ordering = ['published_date',]
+
 
     def approved_comments(self):
         return self.comments.filter(approved_comment=True)

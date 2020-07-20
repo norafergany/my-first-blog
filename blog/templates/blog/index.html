@@ -1,12 +1,17 @@
 {% extends 'blog/base.html' %}
+{% load pygmentify_tags %}
+
 {% load static %}
 
     {% block content %}
 <div class="photo">
-        <img src="../../static/images/headshot.jpg" alt="Avatar" class="headshot">
+        <img src="../../static/images/headshot.jpg" alt="Avatar" class="mx-2 mt-5 headshot">
     </div>
         <div class="text">
         <h1>Nora Fergany</h1>
             <p class="subtext">Software Developer in Pittsburgh, PA</p>
+
+
+
 </div>
 {% endblock %}
