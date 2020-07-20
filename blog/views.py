@@ -8,7 +8,6 @@ from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 
-
 @login_required
 def post_new(request):
     if request.method == "POST":
@@ -92,6 +91,7 @@ def post_list(request):
     categories = Category.objects.all()
     return render(request, 'blog/post_list.html', {'posts': posts, 'categories': categories})
 
+
 def home(request):
     return render(request, 'blog/index.html')
 
@@ -108,10 +108,6 @@ def about_me(request):
 
 def portfolio_list(request):
     return render(request, 'blog/portfolio_list.html')
-
-
-def contact_me(request):
-    return render(request, 'blog/contact_me.html')
 
 
 def category_detail(request, pk):

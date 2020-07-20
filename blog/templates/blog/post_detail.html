@@ -1,19 +1,12 @@
 {% extends 'blog/base.html' %}
 {% load static %}
 {% load pygmentify_tags %}
+    {% block title %} <title>Nora Fergany: {{ post.title }}</title> {% endblock %}
 
 {% block content %}
-<div class="left">
     <div class="post">
 
-        {% if post.published_date %}
-            <div class="date">
-                {{ post.published_date }}
-            </div>
-        {%  else %}
-                        <a class="btn btn-default" href="{% url 'post_publish' pk=post.pk %}">Publish</a>
 
-        {% endif %}
         {% if user.is_authenticated %}
 
             <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
@@ -21,42 +14,44 @@
 
         {% endif %}
 
-        <h1 class="dettitle">{{ post.title }}</h1>
-        <p class="pyg">{% pygmentify style='emacs' linenos='true' %}{{ post.text|linebreaksbr }}{% endpygmentify %}</p>
-
-
-
-<a class="btn btn-default addcomm" href="{% url 'add_comment_to_post' pk=post.pk %}">Add comment</a>
-
-        {% for comment in post.comments.all %}
-    {% if user.is_authenticated or comment.approved_comment %}
-    <div class="comment">
-        <div class="date">
-            {{ comment.created_date }}
-            {% if not comment.approved_comment %}
-                <a class="btn btn-default" href="{% url 'comment_remove' pk=comment.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
-                <a class="btn btn-default" href="{% url 'comment_approve' pk=comment.pk %}"><span class="glyphicon glyphicon-ok"></span></a>
-            {% endif %}
-        </div>
-        <strong>{{ comment.author }}</strong>
-        <p>{{ comment.text|linebreaks }}</p>
-    </div>
-    {% endif %}
-{% empty %}
-    <p class="nocom">No comments here yet :(</p>
-{% endfor %}
-  </div>
-</div>
-    <div class="detright">
-        <div class="rsub">
-        <h3 class="hcat">Categories</h3>
-            <div>
-                <ul class="cat">
-                    {% for category in categories %}
-                    <li class="cat"><i class="fa fa-circle" aria-hidden="true" style="font-size: 0.5em;vertical-align:2px;"></i><a href="{% url 'category_detail' pk=category.pk %}"> {{ category.title }}</a></li> <br/>
-                    {% endfor %}
-                </ul>
+        <h1 class="detail-title">{{ post.title }}</h1>
+{% if post.published_date %}
+            <div class="date">
+                {{ post.published_date }}
             </div>
-        </div>
-    </div>
+        {%  else %}
+                        <a class="btn btn-default" href="{% url 'post_publish' pk=post.pk %}">Publish</a>
+
+        {% endif %}
+        {% pygmentify 'borland' %}
+{#            <pre class="python">#}
+{#            print('hello world')#}
+{#            </pre>#}
+            {{ post.text|safe }}
+        {% endpygmentify %}
+
+
+
+
+{#<a class="btn btn-default addcomm" href="{% url 'add_comment_to_post' pk=post.pk %}">Add comment</a>#}
+{##}
+{#        {% for comment in post.comments.all %}#}
+{#    {% if user.is_authenticated or comment.approved_comment %}#}
+{#    <div class="comment">#}
+{#        <div class="date">#}
+{#            {{ comment.created_date }}#}
+{#            {% if not comment.approved_comment %}#}
+{#                <a class="btn btn-default" href="{% url 'comment_remove' pk=comment.pk %}"><span class="glyphicon glyphicon-remove"></span></a>#}
+{#                <a class="btn btn-default" href="{% url 'comment_approve' pk=comment.pk %}"><span class="glyphicon glyphicon-ok"></span></a>#}
+{#            {% endif %}#}
+{#        </div>#}
+{#        <strong>{{ comment.author }}</strong>#}
+{#        <p>{{ comment.text|linebreaks }}</p>#}
+{#    </div>#}
+{#    {% endif %}#}
+{#{% empty %}#}
+{#    <p class="nocom">No comments here yet :(</p>#}
+{#{% endfor %}#}
+{#  </div>#}
+
 {% endblock %}

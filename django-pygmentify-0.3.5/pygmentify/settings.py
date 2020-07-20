@@ -4,7 +4,7 @@ from django.conf import settings
 
 
 PYGMENTIFY = {
-    'style': 'default',
+    'style': 'borland',
     'cssclass': 'highlight',
     'minify': True,
 }

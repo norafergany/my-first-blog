@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'blog',
     'pygmentify',
+    'tinymce'
 ]
 
 MIDDLEWARE = [
@@ -120,7 +121,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 LOGIN_REDIRECT_URL = '/'
 
 PYGMENTIFY = {
-    'style': 'emacs',
-    'cssclass': 'highlight',
-    'minify': True,
+    'style': 'borland',
+    'cssclass': 'highlight'
 }
+PYGMENTIFY_MINIFY = True
