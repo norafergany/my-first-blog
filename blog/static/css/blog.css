@@ -115,6 +115,10 @@ div.date {
 
 /* START POST LIST */
 
+.nora-col {
+    padding-bottom: 20px;
+}
+
 .article {
     text-align:left;
     border-color:black;
