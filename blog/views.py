@@ -1,3 +1,4 @@
+from django.http import FileResponse, Http404
 from django.utils import timezone
 from .models import Post, Comment, Category
 from django.shortcuts import render, get_object_or_404, redirect
@@ -97,7 +98,10 @@ def index(request):
 
 
 def resume(request):
-    return render(request, 'blog/resume.pdf')
+    try:
+        return FileResponse(open('blog/resume.pdf', 'rb'), content_type='application/pdf')
+    except FileNotFoundError:
+        raise Http404()
 
 
 def post_detail(request, pk):
