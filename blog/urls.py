@@ -17,7 +17,7 @@ urlpatterns = [
     url(r'^comment/(?P<pk>\d+)/remove/$', views.comment_remove, name='comment_remove'),
     url(r'^about_me/$', views.about_me, name='about_me'),
     url(r'^portfolio/$', views.portfolio_list, name="portfolio_list"),
-    url(r'^resume', views.resume, name="resume"),
+    url(r'^resume.pdf$', views.resume, name="resume"),
     url(r'^category/(?P<pk>\d+)/$', views.category_detail, name='category_detail'),
 
 ]
