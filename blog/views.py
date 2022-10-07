@@ -96,6 +96,10 @@ def index(request):
     return render(request, 'blog/index.html')
 
 
+def resume(request):
+    return render(request, 'blog/resume.pdf')
+
+
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
     categories = Category.objects.all()
