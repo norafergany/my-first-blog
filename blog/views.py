@@ -99,7 +99,8 @@ def index(request):
 
 def resume(request):
     try:
-        return FileResponse(open('blog/resume.pdf', 'rb'), content_type='application/pdf')
+        return FileResponse(open('/Users/nfergany/projects/github.com/norafergany/my-first-blog/blog/templates/blog'
+                                 '/resume.pdf', 'rb'), content_type='application/pdf')
     except FileNotFoundError:
         raise Http404()
 
