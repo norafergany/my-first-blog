@@ -97,12 +97,11 @@ def index(request):
     return render(request, 'blog/index.html')
 
 
-def resume(request):
-    try:
-        return FileResponse(open('/Users/nfergany/projects/github.com/norafergany/my-first-blog/blog/templates/blog'
-                                 '/resume.pdf', 'rb'), content_type='application/pdf')
-    except FileNotFoundError:
-        raise Http404()
+# def resume(request):
+#     try:
+#         return FileResponse(open('files/resume.pdf', 'rb'), content_type='application/pdf')
+#     except FileNotFoundError:
+#         raise Http404()
 
 
 def post_detail(request, pk):
