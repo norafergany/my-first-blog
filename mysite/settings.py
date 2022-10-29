@@ -10,7 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
-import os
+import os, dotenv
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -19,12 +19,28 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 's(i787@5_sa@2dn&t7$r@-kws)jy93vnf-w=yg-=^au+i(v@##'
+
+dotenv_file = os.path.join(BASE_DIR, ".env")
+
+if os.path.isfile(dotenv_file):
+    dotenv.load_dotenv(dotenv_file)
+
+# UPDATE secret key
+# Instead of your actual secret key
+SECRET_KEY = os.environ['SECRET_KEY']
+
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
+DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
 ALLOWED_HOSTS = ['127.0.0.1', 'www.norafergany.com', 'localhost']
+
+CSRF_COOKIE_SECURE = True
+
+SESSION_COOKIE_SECURE = True
 
 # Application definition
 
